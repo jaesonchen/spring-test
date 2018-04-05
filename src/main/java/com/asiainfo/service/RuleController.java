@@ -1,5 +1,7 @@
 package com.asiainfo.service;
 
+import java.io.IOException;
+import java.io.Writer;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,6 +60,13 @@ public class RuleController {
         result.put("sex", user.getSex());
         result.put("status", "200");
         return result;
+    }
+    
+    @RequestMapping("/form")
+    public void formPost(@ModelAttribute User user, Writer writer) throws IOException {
+        
+        System.out.println("RuleController.formPost() executed, user=" + user);
+        writer.write("<html><body>success</body></html>");
     }
     
     public static class User implements java.io.Serializable {
