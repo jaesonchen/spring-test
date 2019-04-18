@@ -14,7 +14,7 @@ import com.asiainfo.service.RuleDao;
 import com.asiainfo.service.RuleService;
 
 /**
- * service、dao、component层测试
+ * service、dao 组件测试
  * 
  * @author       zq
  * @date         2018年1月29日  上午10:29:11

@@ -22,7 +22,7 @@ import com.asiainfo.config.SpringmvcConfig;
 import com.asiainfo.service.RuleController;
 
 /**
- * TODO
+ * mockmvc controller 测试，指定controller进行测试
  * 
  * @author       zq
  * @date         2018年1月29日  下午2:09:41
@@ -52,10 +52,11 @@ public class StandaloneTest {
                     .contentType(MediaType.APPLICATION_JSON)
                     .accept(MediaType.APPLICATION_JSON)
             )
-            .andDo(print())
             .andExpect(status().isOk())
             .andExpect(jsonPath("name").value("chenzq"))
-            .andExpect(jsonPath("sex").value("male"));
+            .andExpect(jsonPath("sex").value("male"))
+            .andDo(print());
+            //.andReturn();
     }
     
     @Test
@@ -68,10 +69,10 @@ public class StandaloneTest {
                     .accept(MediaType.APPLICATION_JSON)
                     .content("{\"name\":\"chenzq\", \"sex\":\"male\"}")
             )
-            .andDo(print())
             .andExpect(status().isOk())
             .andExpect(jsonPath("name").value("chenzq"))
             .andExpect(jsonPath("sex").value("male"))
-            .andExpect(jsonPath("status").value("200"));
+            .andExpect(jsonPath("status").value("200"))
+            .andDo(print());
     }
 }

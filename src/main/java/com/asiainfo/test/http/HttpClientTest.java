@@ -8,7 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * TODO
+ * http 测试
  * 
  * @author       zq
  * @date         2018年1月29日  下午3:37:56
@@ -18,7 +18,7 @@ public class HttpClientTest {
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         
-        byte[] response = post("http://localhost:8080/springmock-test/service/post", 
+        byte[] response = post("http://localhost:8080/spring-test/service/post", 
                 "{\"name\":\"chenzq\", \"sex\":\"male\"}".getBytes());
         System.out.println("response=" + new String(response, "utf-8"));
     }

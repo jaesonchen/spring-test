@@ -15,7 +15,7 @@ import com.asiainfo.service.RuleController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * TODO
+ * RestTemplate 测试
  * 
  * @author       zq
  * @date         2018年2月1日  下午3:17:28
@@ -32,21 +32,21 @@ public class RestTemplateTest {
     public static void main(String[] args) throws Exception {
 
         // rest get
-        System.out.println(get("http://localhost:18080/springmock-test/service/get/{name}", String.class, "chenzq"));
-        System.out.println(get("http://localhost:18080/springmock-test/service/get/{name}", RuleController.User.class, "chenzq"));
+        System.out.println(get("http://localhost:18080/spring-test/service/get/{name}", String.class, "chenzq"));
+        System.out.println(get("http://localhost:18080/spring-test/service/get/{name}", RuleController.User.class, "chenzq"));
         
         // form post
         Map<String, String> map = new HashMap<>();
         map.put("name", "czq");
         map.put("sex", "male");
-        System.out.println(formPost("http://localhost:18080/springmock-test/service/form", String.class, map));
+        System.out.println(formPost("http://localhost:18080/spring-test/service/form", String.class, map));
         
         // payload post
         map = new HashMap<>();
         map.put("name", "czq");
         map.put("sex", "male");
-        System.out.println(jsonPost("http://localhost:18080/springmock-test/service/post", String.class, map));
-        System.out.println(jsonPost("http://localhost:18080/springmock-test/service/post", Map.class, map));
+        System.out.println(jsonPost("http://localhost:18080/spring-test/service/post", String.class, map));
+        System.out.println(jsonPost("http://localhost:18080/spring-test/service/post", Map.class, map));
     }
     
     // rest get
